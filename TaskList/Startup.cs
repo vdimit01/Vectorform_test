@@ -33,19 +33,6 @@ namespace TaskList
             services.AddDbContext<TaskListContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TaskListContext")));
 
-            /*
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
-            });
-            */
-            
-            //services.AddMvc();
-
             services.AddTransient<IRepository, TaskQuery>();
             
 
@@ -70,8 +57,6 @@ namespace TaskList
                 endpoints.MapControllers();
             });
 
-            //app.UseCors("CorsPolicy");
-            //app.UseMvc();
         }
     }
 }
