@@ -16,12 +16,10 @@ namespace TaskList.Controllers
     [ApiController]
     public class TasksController : ControllerBase
     {
-        private readonly TaskListContext _context;
         private readonly IRepository _repo;
 
-        public TasksController(TaskListContext context, IRepository repo)
+        public TasksController(IRepository repo)
         {
-            _context = context;
             _repo = repo;
         }
 
